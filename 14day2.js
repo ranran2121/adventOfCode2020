@@ -61,9 +61,7 @@ function replaceX(str, n) {
       i++;
     }
   }
-  /* return arr.map((e) => {
-    return bin2dec(e);
-  }); //returns an array of dec */
+
   return arr.map((e) => {
     obj = {
       mem: bin2dec(e),
@@ -91,10 +89,10 @@ function initialization(input) {
     let processedLine = prepareInput(line);
 
     if (processedLine.mask) {
-      //line is a mask -> it is stored in the maskArr
+      //if line is a mask -> it is stored in the maskArr
       maskArr = processedLine.mask;
     } else {
-      // line is mem -> it is compared to mask
+      //if line is mem -> it is compared to mask
       memMem = dec2bin(processedLine.mem);
       memArr = memMem.split("");
       let newmemNum = compare(maskArr, memArr); //returns a string containing "X"s
